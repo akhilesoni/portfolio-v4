@@ -72,7 +72,6 @@ a:hover{
 
 #moon{
     width: 400px;
-    height: 400px;
     opacity: 0.5;
     position: absolute;
     top: 10%;
@@ -125,5 +124,8 @@ a:hover{
     .content{
         width: 95%;
         border-radius: 30px;
+    }
+    #moon{
+        width: 95% ;
     }
 }
