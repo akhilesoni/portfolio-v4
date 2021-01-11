@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hey-fuckers</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+
+</head>
+<body onload="makestar()">
+    <div id="b" class="sky" onmouseover="movebuilding(event)">
+
+        <div  id="menu" class="menu">
+            <a href="#b"> Home </a>
+            <a href="#about"> About</a>
+            <a href="#project">Project</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="star comat"></div>
+        <img id="moon" class="moon rellax" data-rellax-speed="-4" src="image/moon.png" alt="">
+
+        <div id="mountain" class="mountain "></div>
+
+        <div id="cityThree" class="city three"></div>
+        <div id="cityTwo" class="city two"></div>
+
+       <div id="cityOne" class="city one"></div>
+       <div class="fade"></div>
+
+    </div>
+
+    <div class="about">
+        <div class="content rellax" data-rellax-speed="3"></div>
+    </div>
+
+
+    <script>
+        var rellax = new Rellax('.rellax')
+        function makestar(){
+            for(let i = 0;i<40;i++){
+                var star = document.createElement('div');
+                star.classList.add('star');
+                star.classList.add('rellax');
+                star.setAttribute("data-rellax-speed","-4");
+                star.style.left = Math.random()*window.innerWidth-20;
+                star.style.top = Math.random()*(window.innerHeight/2);
+                document.getElementById('moon').before(star);
+            }
+        }
+
+
+        window.onscroll = ()=>{
+            if(window.scrollY>700){
+                document.getElementById('menu').style.background = 'rgb(56, 56, 56)';
+            }
+            else{
+                document.getElementById('menu').style.background = "transparent";
+            }
+        }
+
+        var t = document.getElementById('t');
+        var one = document.getElementById('cityOne');
+        var two = document.getElementById('cityTwo');
+        var three = document.getElementById('cityThree');
+        var mountain = document.getElementById('mountain');
+        var moon = document.getElementById('moon');
+
+        var b = document.getElementById('b');
+        b.addEventListener("mousemove",(e)=>{
+            one.style.backgroundPositionX = (-e.offsetX+window.innerWidth/2)/7+"px";
+            two.style.backgroundPositionX = (-e.offsetX+window.innerWidth/2)/15+"px";
+            three.style.backgroundPositionX = (-e.offsetX+window.innerWidth/2)/20+"px";
+            mountain.style.backgroundPositionX = (-e.offsetX+window.innerWidth/2)/30+"px";
+            moon.style.left = (-e.offsetX+window.innerWidth/2)/40+"px";
+
+        })
+    
+        anime({
+            targets:'.comat',
+            translateX:[Math.random()*innerWidth,1000],
+            translateY:[0,1000],
+            duration:1000,
+            delay:2000,
+            loop:true,
+            easing:'linear',
+            autoplay:true
+        })
+
+
+
+        anime({
+            targets:'.star',
+            opacity:[0,1],
+            duration:1000,
+            loop:false,
+            easing:'linear',
+            autoplay:true
+        })
+
+        anime({
+            targets:'.mountain',
+            opacity:[0,1],
+            translateY:[100,0],
+            duration:1000,
+            loop:false,
+            easing:'linear',
+            autoplay:true
+        })
+
+        anime({
+            targets:'.moon',
+            opacity:[0,0.5],
+            translateY:[500,0],
+            delay:500,
+            duration:1000,
+            loop:false,
+            easing:'linear',
+            autoplay:true
+        })
+
+
+       
+        anime({
+            targets:'.city',
+            opacity:[0,1],
+            translateY:[50,0],
+            duration:1000,
+            delay:anime.stagger(100),
+            loop:false,
+            easing:'linear',
+            autoplay:true
+        })
+    </script>
+</body>
+</html>
