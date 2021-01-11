@@ -21,6 +21,8 @@
             <a class="menu-item"  href="#project">Project</a>
             <a class="menu-item"  href="#contact">Contact</a>
         </div>
+
+
         <div class="star comat"></div>
         <img id="moon" class="moon rellax" data-rellax-speed="-4" src="image/moon.png" alt="">
 
@@ -30,8 +32,7 @@
         <div id="cityTwo" class="city two"></div>
 
        <div id="cityOne" class="city one"></div>
-       <div class="fade"></div>
-
+    <img class="arrow" src="image/arrow.png" alt="">
     </div>
 
     <div id="about" class="about">
@@ -55,7 +56,7 @@
 
 
         window.onscroll = ()=>{
-            if(window.scrollY>700){
+            if(window.scrollY>window.innerHeight-100){
                 document.getElementById('menu').style.background = 'rgb(56, 56, 56)';
             }
             else{
@@ -91,6 +92,16 @@
             autoplay:true
         })
 
+        
+        anime({
+            targets:'.arrow',
+            translateY:[30,0],
+            duration:500,
+            direction:'alternate',
+            loop:true,
+            easing:'linear',
+            autoplay:true
+        })
 
 
         anime({
@@ -114,7 +125,7 @@
 
         anime({
             targets:'.moon',
-            opacity:[0,0.5],
+            opacity:[0,1],
             translateY:[500,0],
             delay:500,
             duration:1000,
