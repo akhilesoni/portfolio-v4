@@ -16,9 +16,9 @@
 
         <div  id="menu" class="menu">
 
-            <a class="name" style="font-weight: 600;" href="#b"> Akhlesh Soni </a>
-            <a class="menu-item" href="#content"> About</a>
-            <a class="menu-item"  href="#project">Project</a>
+            <a class="name" href="#b"> Akhlesh Soni </a>
+            <a class="menu-item"  href="#content">Project</a>
+            <a class="menu-item"  href="#content">About</a>
             <a class="menu-item"  href="#contact">Contact</a>
         </div>
 
@@ -26,7 +26,7 @@
         <div class="star comat"></div>
         <img id="moon" class="moon rellax" data-rellax-speed="-4" src="image/moon.png" alt="">
 
-        <div id="mountain" class="mountain "></div>
+        <div id="mountain" class="mountain rellax" data-rellax-speed="-3"></div>
 
         <div id="cityThree" class="city three"></div>
         <div id="cityTwo" class="city two"></div>
@@ -36,7 +36,9 @@
     </div>
 
     <div id="about" class="about">
-        <div id="content" class="content rellax" data-rellax-speed="3"></div>
+        <div id="content" class="content rellax" data-rellax-speed="3">
+           
+        </div>
     </div>
 
 
@@ -115,7 +117,7 @@
 
         anime({
             targets:'.mountain',
-            opacity:[0,1],
+            opacity:[0,0.7],
             translateY:[100,0],
             duration:1000,
             loop:false,
