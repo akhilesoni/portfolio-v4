@@ -5,6 +5,10 @@ body{
     color: white;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 a{
     color: white;
     text-decoration: none;
@@ -17,8 +21,11 @@ a:hover{
 }
 
 .menu a{
-    margin: 30px;
+    margin: 0 30px;
+    font-size: 25px;
 }
+
+
 .menu{
     float: right; 
     width: 100%;
@@ -26,7 +33,7 @@ a:hover{
     top: 0;
     z-index: 999;
     transition: 0.5s;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .sky{
@@ -92,22 +99,22 @@ a:hover{
 
 .one{
     bottom: 0;
-    height: 30%;
+    height: 29%;
     background-size: 1000px;
     background-image: url(image/city-dark-1.png);
     background-repeat: repeat-x;
 }
 
 .two{
-    bottom: 5%;
-    height: 26.5%;
+    bottom: 4%;
+    height: 35%;
     background-size: 1000px;
     background-image: url(image/city-dark-2.png);
     background-repeat: repeat-x;}
 
 .three{
-    bottom: 10%;
-    height: 26.5%;
+    bottom: 7%;
+    height: 30%;
     background-size: 1000px;
     background-image: url(image/city-dark-3.png);
     background-repeat: repeat-x;}
@@ -125,7 +132,33 @@ a:hover{
         width: 95%;
         border-radius: 30px;
     }
+    
+
+    .menu .menu-item{
+        display: none;
+    }
     #moon{
         width: 95% ;
+    }
+
+    .name{
+        display: block;
+    }
+    .one{
+        background-size: 500px;
+    }
+    .two{
+        background-size: 500px;
+    }
+    .three{
+        background-size: 500px;
+    }
+
+    .mountain{
+        background-size: 500px;
+    }
+
+    .star{
+        display: none;
     }
 }
