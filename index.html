@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
 </head>
 <body onload="makestar()">
@@ -39,32 +40,34 @@
         </div>
 
     </div>
-    <div id="b" class="sky" onmouseover="movebuilding(event)">
+    <div  id="menu" class="menu">
 
-        <div  id="menu" class="menu">
-
-            <a class="name" href="#b"> Akhlesh Soni </a>
-            <a class="menu-item"  href="#content">Project</a>
-            <a class="menu-item"  href="#content">About</a>
-            <a class="menu-item" onclick="openchatbot()" >Contact</a>
-            <a class="floatmenubutton" onclick="menudialog()" >  &#9776;</a>
+        <a class="name" href="#b"> Akhlesh Soni </a>
+        <a class="menu-item"  href="#content">Project</a>
+        <a class="menu-item"  href="#content">About</a>
+        <a class="menu-item" onclick="openchatbot()" >Contact</a>
+        <a class="floatmenubutton" onclick="menudialog()" >  &#9776;</a>
+    </div>
+    <div id="b" class="sky">
+        <div class="introduction-wrapper">
+            <div class="introduction rellax" data-rellax-speed="-3">
+                <h1>Hi! I'm Akhlesh Soni</h1>
+                <p>Freelancer, geek and UI lover</p>
+            </div>
+            <div class="introanimation rellax" data-rellax-speed="10">
+                <div class="ball">
+                    <div class="bearing"></div>
+                </div>
+            </div>
         </div>
-
-
-        <div class="star comat"></div>
-        <img id="moon" class="moon rellax" data-rellax-speed="-4" src="image/moon.png" alt="">
-
-        <div id="mountain" class="mountain rellax" data-rellax-speed="-3"></div>
-
-        <div id="cityThree" class="city three"></div>
-        <div id="cityTwo" class="city two"></div>
-
-       <div id="cityOne" class="city one"></div>
-    <img class="arrow" src="image/arrow.png" alt="">
+        <img class="arrow" src="image/arrow.png" alt="">
     </div>
 
     <div id="chatbot" class="chatbot">
-        <div class="head"><div class="heading">Ask him not me!</div><div class="cross">&#10008;</div></div>
+        <div class="head">
+            <div class="heading">Ask him not me!</div>
+            <div class="cross"> &#10005;</div>
+        </div>
         <div id="chat" class="chat">
             <div class="bot">
                 hi! I'm Akhlesh's Bot
@@ -97,17 +100,7 @@
 
     <script>
         var rellax = new Rellax('.rellax')
-        function makestar(){
-            for(let i = 0;i<40;i++){
-                var star = document.createElement('div');
-                star.classList.add('star');
-                star.classList.add('rellax');
-                star.setAttribute("data-rellax-speed","-4");
-                star.style.left = Math.random()*window.innerWidth-20;
-                star.style.top = Math.random()*(window.innerHeight/2);
-                document.getElementById('moon').before(star);
-            }
-        }
+     
 
         function closechatbot(){
             closechatbotanim.play();
@@ -124,7 +117,7 @@
         var hire = document.getElementById('hire');
         var oldsite = document.getElementById('oldsite');
 
-
+     
         function app(id){
             
             document.getElementById('hello').style.display = "none"
@@ -154,8 +147,8 @@
         }
 
         window.onscroll = ()=>{
-            if(window.scrollY>window.innerHeight-100){
-                document.getElementById('menu').style.background = 'rgb(56, 56, 56)';
+            if(window.scrollY>10){
+                document.getElementById('menu').style.background = 'white';
             }
             else{
                 document.getElementById('menu').style.background = "transparent";
@@ -172,27 +165,14 @@
            }
         }
 
-        var t = document.getElementById('t');
-        var one = document.getElementById('cityOne');
-        var two = document.getElementById('cityTwo');
-        var three = document.getElementById('cityThree');
-        var mountain = document.getElementById('mountain');
-        var moon = document.getElementById('moon');
-
-        var b = document.getElementById('b');
-        b.addEventListener("mousemove",(e)=>{
-            one.style.backgroundPositionX = (-e.offsetX+window.innerWidth/2)/7+"px";
-            two.style.backgroundPositionX = (-e.offsetX+window.innerWidth/2)/15+"px";
-            three.style.backgroundPositionX = (-e.offsetX+window.innerWidth/2)/20+"px";
-            mountain.style.backgroundPositionX = (-e.offsetX+window.innerWidth/2)/30+"px";
-            moon.style.left = (-e.offsetX+window.innerWidth/2)/40+"px";
-
-        })
+       
         
 
         var menuanim = anime({
             targets:'.floatmenu',
             scale:[0,1],
+            translateX:[200,0],
+            translateY:[-200,0],
             duration:50,
             loop:false,
             autoplay:false
@@ -231,7 +211,17 @@
             autoplay:true
         })
 
-        
+
+        anime({
+            targets:'.bearing',
+            translateX:[100,200,120,34,300,220],
+            translateY:[300,100,400,200,134,324],
+            duration:10000,
+            direction:'alternate',
+            loop:true,
+            autoplay:true
+        })
+
         anime({
             targets:'.arrow',
             translateY:[30,0],

@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Raleway';
+    font-family: 'Montserrat';
     color: white;
 }
 
@@ -16,6 +16,47 @@ a{
     transition: 0.2s;
 }
 
+.introduction-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+   
+}
+
+.introduction{
+    width: 444px;
+    margin: auto;
+    padding: 30px;
+    color: rgb(73, 73, 73);
+    font-family: 'Montserrat';
+}
+
+.introduction h1{
+    font-size: 60px;
+}
+
+.introanimation{
+    width: 444px;
+    height: 500px;
+    background-color: white;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.096);
+   
+}
+.introanimation .ball{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(59, 59, 59);
+}
+
+.introanimation .ball .bearing{
+    background-color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
 
 
 .floatmenu{
@@ -57,7 +98,7 @@ a{
     margin: 0 30px;
     font-size: 20px;
     cursor: pointer;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 
@@ -74,7 +115,7 @@ a{
 .sky{
  width: 100%;
  height: 100%;
- background-image: linear-gradient(rgb(0, 0, 0) , rgb(191, 112, 255));
+ background: white;
 }
 
 .city{
@@ -100,11 +141,12 @@ a{
     border-radius: 50px;
     color: rgb(41, 41, 41);
     padding-bottom: 20px;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.1);
 }
 .ghargrocery .ghargroceryimage{
     max-width: 444px;
     margin: auto;
-    width: 100%;
+    width: 80%;
     text-align: center;
     transition: 0.5s;
 }
@@ -118,15 +160,6 @@ a{
     margin: 0;
 }
 
-.fade{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    height: 24%;
-    background-size: 1000px;
-    background-image: url(image/fade.png);
-    background-repeat: repeat-x;
-}
 
 
 .arrow{
@@ -138,53 +171,12 @@ a{
 
 }
 
-#moon{
-    width: 400px;
-    position: absolute;
-    top: 10%;
-    overflow: hidden;
-    opacity: 0.5;
-}
 
-.mountain{
-    width: 100%;
-    position: absolute;
-    bottom: 10%;
-    height: 50%;
-    opacity: 0.7;
-    background-size: 1000px;
-    background-image: url(image/mountain.png);
-    background-repeat: repeat-x;
-}
-
-.one{
-    bottom: 0;
-    height: 29%;
-    background-size: 1000px;
-    background-image: url(image/city-dark-1.png);
-    background-repeat: repeat-x;
-}
-
-.two{
-    bottom: 0;
-    height: 33%;
-    background-size: 900px;
-    background-image: url(image/city-dark-2.png);
-    background-repeat: repeat-x;
-}
-
-.three{
-    bottom: 0;
-    height: 33%;
-    background-size: 900px;
-    background-image: url(image/city-dark-3.png);
-    background-repeat: repeat-x;
-}
 
 
 .about{
     width: 100%;
-    background-color: rgb(224, 224, 224);
+    background-color: rgb(255, 255, 255);
 }
 
 
@@ -200,6 +192,8 @@ a{
     z-index: 999;
     box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.144);
     display: none;
+    border-radius: 20px;
+    overflow: hidden;
 }   
 
 .chatbot .chat{
@@ -211,6 +205,7 @@ a{
     text-align: center;
     width: 90%;
     height: 5%;
+    overflow: hidden;
     padding: 5%;
     color: white;
     background-color: rgb(36, 36, 36);
@@ -227,9 +222,16 @@ a{
 
 .chatbot .head .cross{
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
     cursor: pointer;
+    font-size: 30px;
+    transition: 0.2s;
+}
+
+.chatbot .head .cross:hover{
+    font-size:40px ;
+    top: 0;
 }
 
 .bot{
@@ -239,6 +241,8 @@ a{
     border: 2px solid rgb(153, 153, 153);
     border-radius: 10px;
 }
+
+
 
 .chatbot .option{
     background-color: rgb(238, 209, 174);
@@ -254,11 +258,13 @@ a{
 }
 
 @media screen and (max-width:600px){
-    .content{
+    .ghargrocery{
         width: 95%;
         border-radius: 30px;
     }
-   
+    .introanimation{
+        width:95%;
+    }
     .floatmenubutton{
         opacity: 1;
     }
@@ -281,16 +287,7 @@ a{
     }
 
    
-    .one{
-        background-size: 1000px;
-    }
-    .two{
-        background-size: 900px;
-    }
-    .three{
-        background-size: 900px;
-        bottom: -2%;
-    }
+   
 
     .mountain{
         background-size: 800px;
