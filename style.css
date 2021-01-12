@@ -10,19 +10,54 @@ html{
 }
 
 a{
-    color: white;
+  
     text-decoration: none;
     text-emphasis: none;
     transition: 0.2s;
 }
 
-a:hover{
+
+
+.floatmenu{
+    width: 200px;
+    position: fixed;
+    top: 80px;
+    z-index: 999;
+    right: 10px;
+    display: none;
+    transition: 0.2s;
+    text-align: center;
+    background-color: white;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.199);
+}
+
+.floatmenubutton{
+    float: right;
+    opacity: 0;
+}
+
+.floatmenu .floatmenuoption{
+    padding: 10px;
+}
+
+.floatmenu .floatmenuoption a{
+    cursor: pointer;
+    color: black;
+}
+
+.floatmenu .floatmenuoption:hover{
+ background-color: rgb(211, 211, 211);
+}
+
+.menu a:hover{
     color: rgb(192, 192, 192);
 }
 
 .menu a{
     margin: 0 30px;
     font-size: 20px;
+    cursor: pointer;
+    color: white;
 }
 
 
@@ -138,12 +173,86 @@ a:hover{
 }
 
 
+.chatbot{
+    width: 400px;
+    height: 80%;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    margin-left: -200px;
+    background: white;
+    color: rgb(0, 0, 0);
+    z-index: 999;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.144);
+    display: none;
+}   
+
+.chatbot .chat{
+    overflow-y: scroll;
+    height: 85%;
+}
+
+.chatbot .head{
+    text-align: center;
+    width: 90%;
+    height: 5%;
+    padding: 5%;
+    color: white;
+    background-color: rgb(36, 36, 36);
+    display: flex;
+}
+
+.chatbot .head .heading{
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    z-index: 20;
+    margin-left: -54px;
+}
+
+.chatbot .head .cross{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.bot{
+    width: fit-content;
+    margin: 20px;
+    padding: 20px 20px;
+    border: 2px solid rgb(153, 153, 153);
+    border-radius: 10px;
+}
+
+.chatbot .option{
+    background-color: rgb(238, 209, 174);
+    width: fit-content;
+    padding: 15px;
+    margin: 10px 20px;
+    border-radius: 15px;
+    transition: 0.1s;
+}
+
+.chatbot .option:hover{
+    background-color: rgb(212, 182, 146);
+}
+
 @media screen and (max-width:600px){
     .content{
         width: 95%;
         border-radius: 30px;
     }
-    
+   
+    .floatmenubutton{
+        opacity: 1;
+    }
+
+    .chatbot{
+        width: 96%;
+        left: 50%;
+        margin-left: -48%;
+    }
     .arrow{
         width: 50px;
         left: 50%;
@@ -153,12 +262,10 @@ a:hover{
         display: none;
     }
     #moon{
-        width: 95% ;
+        width: 80% ;
     }
 
-    .name{
-        display: block;
-    }
+   
     .one{
         background-size: 1000px;
     }
@@ -166,11 +273,12 @@ a:hover{
         background-size: 900px;
     }
     .three{
-        background-size: 800px;
+        background-size: 900px;
+        bottom: -2%;
     }
 
     .mountain{
-        background-size: 1000px;
+        background-size: 800px;
     }
 
    

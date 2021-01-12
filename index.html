@@ -12,6 +12,33 @@
 
 </head>
 <body onload="makestar()">
+    <div class="floatmenu" id="floatmenu">
+        <div class="floatmenuoption"><a href="">Project</a></div>
+        <div class="floatmenuoption"><a href="">About</a></div>
+        <div class="floatmenuoption" onclick="openchatbot()"><a >Contact</a></div>
+    </div>
+    <div id="chatbot" class="chatbot">
+        <div class="head"><div class="heading">Ask him not me!</div><div id="cross" onclick="closechatbot()" class="cross">&#10008;</div></div>
+        <div id="chat" class="chat">
+            <div class="bot">
+                hi! I'm Akhlesh's Bot
+                </div>
+                <div class="bot">
+                   How can I help you today?
+                </div>
+        
+                <div id="hello" onclick="app('hello')" class="option">
+                    I just wanted to say Hello!
+                </div>
+                <div id="hire" onclick="app('hire')" class="option">
+                    I want to hire you.
+                </div>
+                <div id="oldsite" onclick="app('oldsite')" class="option">
+                    Looking for old site.
+                </div>
+        </div>
+
+    </div>
     <div id="b" class="sky" onmouseover="movebuilding(event)">
 
         <div  id="menu" class="menu">
@@ -19,7 +46,8 @@
             <a class="name" href="#b"> Akhlesh Soni </a>
             <a class="menu-item"  href="#content">Project</a>
             <a class="menu-item"  href="#content">About</a>
-            <a class="menu-item"  href="#contact">Contact</a>
+            <a class="menu-item" onclick="openchatbot()" >Contact</a>
+            <a class="floatmenubutton" onclick="menudialog()" >  &#9776;</a>
         </div>
 
 
@@ -33,6 +61,29 @@
 
        <div id="cityOne" class="city one"></div>
     <img class="arrow" src="image/arrow.png" alt="">
+    </div>
+
+    <div id="chatbot" class="chatbot">
+        <div class="head"><div class="heading">Ask him not me!</div><div class="cross">&#10008;</div></div>
+        <div id="chat" class="chat">
+            <div class="bot">
+                hi! I'm Akhlesh's Bot
+                </div>
+                <div class="bot">
+                   How can I help you today?
+                </div>
+        
+                <div id="hello" onclick="app('hello')" class="option">
+                    I just wanted to say Hello!
+                </div>
+                <div id="hire" onclick="app('hire')" class="option">
+                    I want to hire you.
+                </div>
+                <div id="oldsite" onclick="app('oldsite')" class="option">
+                    Looking for old site.
+                </div>
+        </div>
+
     </div>
 
     <div id="about" class="about">
@@ -56,6 +107,49 @@
             }
         }
 
+        function closechatbot(){
+            closechatbotanim.play();
+            document.getElementById('chatbot').style.display = "none";
+        }
+
+        function openchatbot(){
+            document.getElementById('chatbot').style.display = "block";
+            chatbotanim.play();
+
+        }
+
+        var hello = document.getElementById('hello');
+        var hire = document.getElementById('hire');
+        var oldsite = document.getElementById('oldsite');
+
+
+        function app(id){
+            
+            document.getElementById('hello').style.display = "none"
+            document.getElementById('hire').style.display = "none"
+            document.getElementById('oldsite').style.display = "none"
+
+            var bot = document.createElement('div');
+            bot.classList.add('bot');
+            if(id == "hello"){
+                bot.innerText = "thanks for visiting me and my website";
+
+            }else if(id == "hire"){
+                bot.innerText = "I.m glad to know that";
+            }else{
+                bot.innerText = "sorry we have it shuttdown";
+            }
+
+        
+            document.getElementById('hello').before(bot);
+
+            setTimeout(()=>{
+                document.getElementById('hello').style.display = "block"
+            document.getElementById('hire').style.display = "block"
+            document.getElementById('oldsite').style.display = "block"
+            },1000)
+
+        }
 
         window.onscroll = ()=>{
             if(window.scrollY>window.innerHeight-100){
@@ -64,6 +158,16 @@
             else{
                 document.getElementById('menu').style.background = "transparent";
             }
+        }
+
+        function menudialog(){
+           if(document.getElementById('floatmenu').style.getPropertyValue('display') == "none"){
+            document.getElementById('floatmenu').style.display = "block";
+            menuanim.play();
+           }else{
+            closemenuanim.play();
+            document.getElementById('floatmenu').style.display = "none";
+           }
         }
 
         var t = document.getElementById('t');
@@ -82,7 +186,38 @@
             moon.style.left = (-e.offsetX+window.innerWidth/2)/40+"px";
 
         })
-    
+        
+
+        var menuanim = anime({
+            targets:'.floatmenu',
+            scale:[0,1],
+            duration:50,
+            loop:false,
+            autoplay:false
+        })
+        
+        var closemenuanim = anime({
+            targets:'.floatmenu',
+            scale:[1,0],
+            duration:50,
+            loop:false,
+            autoplay:false
+        })
+        var chatbotanim = anime({
+            targets:'.chatbot',
+            scale:[0,1],
+            duration:1000,
+            loop:false,
+            autoplay:false
+        })
+        var closechatbotanim = anime({
+            targets:'.chatbot',
+            scale:[1,0],
+            duration:1000,
+            loop:false,
+            autoplay:false
+        })
+
         anime({
             targets:'.comat',
             translateX:[Math.random()*window.innerWidth,window.innerWidth-30],
