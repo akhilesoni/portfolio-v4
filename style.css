@@ -143,6 +143,7 @@ a{
     position: absolute;
     top: 10%;
     overflow: hidden;
+    opacity: 0.5;
 }
 
 .mountain{
