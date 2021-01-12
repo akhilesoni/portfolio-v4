@@ -20,6 +20,7 @@ a{
     display: flex;
     flex-wrap: wrap;
     padding-top: 50px;
+    margin-bottom:40px ;
    
 }
 
@@ -38,7 +39,7 @@ a{
 .introanimation{
     width: 444px;
     height: 500px;
-    background-color: white;
+    background-color: rgb(53, 53, 53);
     overflow: hidden;
     margin: auto;
     border-radius: 20px;
@@ -46,13 +47,14 @@ a{
    
 }
 .introanimation .ball{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(59, 59, 59);
+    width: 200px;
+    border-radius: 50%;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
 }
 
 .introanimation .ball .bearing{
-    background-color: white;
+    background-color: rgb(53, 53, 53);
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -60,7 +62,9 @@ a{
 
 
 .floatmenu{
+    padding: 10px 0;
     width: 200px;
+    border-radius: 10px;
     position: fixed;
     top: 80px;
     z-index: 999;
@@ -101,6 +105,14 @@ a{
     color: rgb(0, 0, 0);
 }
 
+.menu p{
+    padding: 0 20px;
+    margin: 0;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
 
 .menu{
     float: right; 
@@ -114,7 +126,7 @@ a{
 
 .sky{
  width: 100%;
- height: 100%;
+ height: fit-content;
  background: white;
 }
 
@@ -160,6 +172,36 @@ a{
     margin: 0;
 }
 
+.dscsstc{
+    width: 90%;
+    margin: auto;
+    background-image: linear-gradient(to top right,rgb(177, 207, 216),rgb(217, 238, 241));
+    text-align: center;
+    border-radius: 50px;
+    color: rgb(41, 41, 41);
+    padding-bottom: 20px;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+
+}
+
+.dscsstc .dscsstcimage{
+    max-width: 370px;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.048);
+    background-color: white;
+    transition: 0.5s;
+    margin-bottom: 30px;
+    
+}
+
+.dscsstc h1{
+    padding: 30px;
+}
 
 
 .arrow{
@@ -259,6 +301,11 @@ a{
 
 @media screen and (max-width:600px){
     .ghargrocery{
+        width: 95%;
+        border-radius: 30px;
+    }
+
+    .dscsstc{
         width: 95%;
         border-radius: 30px;
     }

@@ -46,7 +46,7 @@
         <a class="menu-item"  href="#content">Project</a>
         <a class="menu-item"  href="#content">About</a>
         <a class="menu-item" onclick="openchatbot()" >Contact</a>
-        <a class="floatmenubutton" onclick="menudialog()" >  &#9776;</a>
+        <p class="floatmenubutton" onclick="menudialog()" >  &#9776;</p>
     </div>
     <div id="b" class="sky">
         <div class="introduction-wrapper">
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <img class="arrow" src="image/arrow.png" alt="">
+        <img id="arrow" class="arrow" src="image/arrow.png" alt="">
     </div>
 
     <div id="chatbot" class="chatbot">
@@ -94,6 +94,11 @@
             <h1>GharGrocery</h1>
             <p>MOBILE APP</p>
             <img class="ghargroceryimage" src="image/ghargroceryproject1.png" alt="">
+        </div>
+        <div class="dscsstc rellax" data-rellax-speed="2">
+            <h1>DSC SSTC</h1>
+            <p>MOBILE APP</p>
+            <img class="dscsstcimage" src="image/dscsstcproject2.png" alt="">
         </div>
     </div>
 
@@ -149,9 +154,12 @@
         window.onscroll = ()=>{
             if(window.scrollY>10){
                 document.getElementById('menu').style.background = 'white';
+                document.getElementById('arrow').style.display = "none"
             }
             else{
                 document.getElementById('menu').style.background = "transparent";
+                document.getElementById('arrow').style.display = "block"
+
             }
         }
 
@@ -211,11 +219,21 @@
             autoplay:true
         })
 
-
+        anime({
+            targets:'.ball',
+            translateX:[100,100,100,100,],
+            translateY:[100,110,90,100],
+            scale:[1,1,1,2],
+            duration:10000,
+            direction:'alternate',
+            loop:true,
+            autoplay:true
+        })
         anime({
             targets:'.bearing',
-            translateX:[100,200,120,34,300,220],
-            translateY:[300,100,400,200,134,324],
+            translateX:[50,70,80,50],
+            translateY:[50,0,100,50],
+            scale:[1,1,1,1.5],
             duration:10000,
             direction:'alternate',
             loop:true,
