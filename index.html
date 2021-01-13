@@ -67,6 +67,7 @@
         <div class="head">
             <div class="heading">Ask him not me!</div>
             <div class="cross"> &#10005;</div>
+
         </div>
         <div id="chat" class="chat">
             <div class="bot">
@@ -113,12 +114,16 @@
         </div>
     </div>
 
-
-    <div class="socialmedia">
-        <div class="instagram social-card"><div class="socialarrow">&#8680;</div><img class="image" src="image/instagram.png" alt=""></div>
-        <div class="github social-card"><div class="socialarrow">&#8680;</div><img class="image" src="image/github.png" alt=""></div>
-        <div class="linkedin social-card"><div class="socialarrow">&#8680;</div><img class="image" src="image/linkedin.png" alt=""></div>
-
+    <div class="botanim rellax" data-rellax-speed="0.2">
+        <div class="eye-wrapper">
+            <div class="eye">
+                <div class="eyeball"></div>
+            </div>
+            <div class="eye">
+                <div class="eyeball"></div>
+            </div>
+        </div>
+        <div id="mouth" onclick="openchatbot()" class="mouth"><h2>Talk To Me!</h2></div>
     </div>
 
     <div class="floatbox1 rellax" data-rellax-speed="-4"></div>
@@ -151,24 +156,32 @@
             document.getElementById('oldsite').style.display = "none"
 
             var bot = document.createElement('div');
+            var me = document.createElement('div');
             bot.classList.add('bot');
+            me.classList.add('me');
             if(id == "hello"){
                 bot.innerText = "thanks for visiting me and my website";
-
+                me.innerText = "hello";
             }else if(id == "hire"){
                 bot.innerText = "I.m glad to know that";
+                me.innerText = "I want to hire you!";
             }else{
+                me.innerText = "oldsite?";
                 bot.innerText = "sorry we have it shuttdown";
             }
 
-        
-            document.getElementById('hello').before(bot);
+            document.getElementById('hello').before(me);
+
+
+            setTimeout(()=>{
+                document.getElementById('hello').before(bot);
+            },1000);
 
             setTimeout(()=>{
                 document.getElementById('hello').style.display = "block"
             document.getElementById('hire').style.display = "block"
             document.getElementById('oldsite').style.display = "block"
-            },1000)
+            },2000)
 
         }
 
@@ -193,6 +206,17 @@
             document.getElementById('floatmenu').style.display = "none";
            }
         }
+
+        anime({
+            targets:'.eyeball',
+            duration:10000,
+            translateX:[0,30,60,40,10,30,20,60,10,40],
+            translateY:[0,30,60,20,40,60,20,10,50,30],
+            scale:[1,1,2,1,1,2,1,1,1,1],
+            direction:'alternate',
+            loop:true,
+            autoplay:true
+        })
 
        
         

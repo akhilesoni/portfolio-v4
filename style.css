@@ -90,12 +90,17 @@ a{
     color: black;
 }
 
+
+
 .floatmenu .floatmenuoption:hover{
  background-color: rgb(211, 211, 211);
 }
 
 .menu a:hover{
-    color: rgb(192, 192, 192);
+    color: rgb(255, 255, 255);
+    background-color: rgb(44, 44, 44);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .menu a{
@@ -151,20 +156,8 @@ a{
  height: fit-content;
 }
 
-.city{
-    width: 100%;
-    position: absolute;
-  
-}
 
-.star{
-    height: 2px;
-    width: 2px;
-    background-color: rgb(177, 177, 177);
-    position: absolute;
-   overflow: hidden;
- 
-}
+
 
 .ghargrocery{
     width: 90%;
@@ -247,10 +240,10 @@ a{
 
 
 .chatbot{
-    width: 400px;
+    width: 300px;
     height: 80%;
     position: fixed;
-    top: 10%;
+    top: 15%;
     left: 50%;
     margin-left: -200px;
     background: white;
@@ -279,25 +272,19 @@ a{
 }
 
 .chatbot .head .heading{
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    z-index: 20;
-    margin-left: -54px;
+   text-align: center;
+   width: 100%;
 }
 
 .chatbot .head .cross{
     position: absolute;
-    top: 10px;
     right: 20px;
-    cursor: pointer;
-    font-size: 30px;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 .chatbot .head .cross:hover{
-    font-size:40px ;
-    top: 0;
+    transform: scale(2);
+    
 }
 
 .bot{
@@ -306,10 +293,24 @@ a{
     padding: 20px 20px;
     border: 2px solid rgb(153, 153, 153);
     border-radius: 10px;
+    float: left;
 }
 
 
+.botbot{
+    width: 40px;
+}
 
+.chatbot .me{
+    width: fit-content;
+    margin: 20px;
+    text-align: end;
+    padding: 20px 20px;
+    color: white;
+    float: right;
+    background-color: rgb(29, 29, 29);
+    border-radius: 10px;
+}
 .chatbot .option{
     background-color: rgb(238, 209, 174);
     width: fit-content;
@@ -317,6 +318,7 @@ a{
     margin: 10px 20px;
     border-radius: 15px;
     transition: 0.1s;
+    float: left;
 }
 
 .chatbot .option:hover{
@@ -350,76 +352,64 @@ a{
 }
 
 
-
-
-.socialmedia{
+.botanim{
+    width: 400px;
+    height: 400px;
+    background: rgb(44, 44, 44);
+    border-radius: 30px;
+    margin: 0 auto 40px auto;
+    overflow: hidden;
+}
+.botanim .eye-wrapper{
     display: flex;
-    flex-wrap: wrap;
+    margin-top: 20%;
 }
 
-.socialmedia .social-card{
-    width: 200px;
-    height: 300px;
-    margin: auto;
-   position: relative;
+.botanim .mouth{
+    width: 40%;
+    color: rgb(41, 41, 41);
     border-radius: 20px;
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.068);
-}
-
-.socialmedia .social-card .socialarrow{
-    background-color: rgb(173, 40, 40);
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
     text-align: center;
-    position: absolute;
-    top: 0;
+    padding: 10px;
+    background-color: white;
+    margin: auto;
+    margin-top: 15%;
+    transition: 0.3s;
 }
 
-.socialmedia .instagram .image:hover{
-    top: -30%;
+.botanim .mouth:hover{
+    background-color: rgb(219, 48, 48);
+    border: 3px solid white;
+    color: rgb(255, 255, 255);
 
 }
-.socialmedia .github .image:hover{
-    top: -30%;
+.botanim .eye{
+    background: white;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border: 1px solid white;
+    overflow: hidden;
+}
 
+.botanim .eye .eyeball{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgb(44, 44, 44);
 }
-.socialmedia .linkedin .image:hover{
-    top: -30%;
 
-}
-
-.socialmedia .instagram .image{
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition: 0.5s;
-}
-.socialmedia .github .image{
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition: 0.5s;
-}
-.socialmedia .linkedin .image{
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition: 0.5s;
-}
 
 @media screen and (max-width:600px){
     .ghargrocery{
         width: 95%;
         border-radius: 30px;
     }
-    .social-card .image{
-        width: 100%;
-        
-    }
-    .socialmedia .social-card{
-        width: 95%;
-        margin:20px auto ;
+  
+    .botanim{
+        width: 90%;
+        height: 80%;
     }
     .floatbox1{
         width: 90%;
