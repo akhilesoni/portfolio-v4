@@ -20,8 +20,8 @@
         </div>
     </div>
     <div class="floatmenu" id="floatmenu">
-        <div class="floatmenuoption"><a href="">Project</a></div>
-        <div class="floatmenuoption"><a href="">About</a></div>
+        <div class="floatmenuoption"><a href="#project">Project</a></div>
+        <div class="floatmenuoption"><a href="#about">About</a></div>
         <div class="floatmenuoption" onclick="openchatbot()"><a >Contact</a></div>
     </div>
     <div id="chatbot" class="chatbot">
@@ -36,13 +36,13 @@
         
                 <div id="option-wrapper" class="option-wrapper">
                     <div id="hello" onclick="app('hello')" class="option">
-                        Hello!
+                        &#9996; Hello!
                     </div>
                     <div id="hire" onclick="app('hire')" class="option">
-                        hire!!
+                        &#9990; hire!!
                     </div>
                     <div id="oldsite" onclick="app('oldsite')" class="option">
-                        old site?
+                        &#9872;  old site?
                     </div>
                 </div>
         </div>
@@ -51,8 +51,8 @@
     <div  id="menu" class="menu">
 
         <a class="name" href="#b"> Akhlesh Soni </a>
-        <a class="menu-item"  href="#content">Project</a>
-        <a class="menu-item"  href="#content">About</a>
+        <a class="menu-item"  href="#project">Project</a>
+        <a class="menu-item"  href="#about">About</a>
         <a class="menu-item" onclick="openchatbot()" >Contact</a>
         <p class="floatmenubutton" onclick="menudialog()" >  &#9776;</p>
     </div>
@@ -73,7 +73,7 @@
 
 
 
-    <div  class="ghargrocery rellax" data-rellax-speed="3">
+    <div  id="project" class="ghargrocery rellax" data-rellax-speed="3">
         <h1>GharGrocery</h1>
         <p>MOBILE APP</p>
         <img class="ghargroceryimage" src="image/ghargroceryproject1.png" alt="">
@@ -86,9 +86,9 @@
        
 
 
-    <div class="about rellax" data-rellax-speed="1">
-        <div class="image-wrapper rellax" data-rellax-speed="0">
-            <img src="image/mypic.jpeg" alt="">
+    <div id="about" class="about rellax" data-rellax-speed="1">
+        <div id="picw" class="image-wrapper rellax" data-rellax-speed="0">
+            <img id="mypic" src="image/mypic.jpeg" alt="">
         </div>
         <div class="content">
             <h1>hey it's me again</h1>
@@ -145,7 +145,7 @@
                 bot.innerText = "thanks for visiting me and my website";
                 me.innerText = "hello";
             }else if(id == "hire"){
-                bot.innerText = "I.m glad to know that";
+                bot.innerText = "Sounds good! Mail me for more info at Soniakhilesh101@gmail.com";
                 me.innerText = "I want to hire you!";
             }else{
                 me.innerText = "oldsite?";
@@ -166,6 +166,14 @@
             },2000)
 
         }
+        var picw = document.getElementById('picw');
+        var pic = document.getElementById('mypic');
+        pic.addEventListener('mousemove',(event)=>{
+            
+            pic.style.transform = "translate("+(-250+event.offsetX)/10+"px,"+(-250+event.offsetY)/10+"px)";
+            picw.style.transform = "translate("+(250-event.offsetX)/6+"px,"+(250-event.offsetY)/6+"px)";
+
+        })
 
         window.onscroll = ()=>{
             if(window.scrollY>10){
@@ -222,9 +230,8 @@
 
         var menuanim = anime({
             targets:'.floatmenu',
-            scale:[0,1],
-            translateX:[200,0],
-            translateY:[-200,0],
+            opacity:[0,1],
+            translateY:[20,0],
             duration:50,
             loop:false,
             autoplay:false
@@ -232,14 +239,16 @@
         
         var closemenuanim = anime({
             targets:'.floatmenu',
-            scale:[1,0],
+            opacity:[0,1],
+            translateY:[20,0],
             duration:50,
             loop:false,
             autoplay:false
         })
         var chatbotanim = anime({
             targets:'.chatbot',
-            scale:[0,1],
+            opacity:[0,1],
+            translateY:[20,0],
             duration:1000,
             loop:false,
             autoplay:false
