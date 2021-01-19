@@ -34,14 +34,16 @@
                    How can I help you today?
                 </div>
         
-                <div id="hello" onclick="app('hello')" class="option">
-                    I just wanted to say Hello!
-                </div>
-                <div id="hire" onclick="app('hire')" class="option">
-                    I want to hire you.
-                </div>
-                <div id="oldsite" onclick="app('oldsite')" class="option">
-                    Looking for old site.
+                <div id="option-wrapper" class="option-wrapper">
+                    <div id="hello" onclick="app('hello')" class="option">
+                        Hello!
+                    </div>
+                    <div id="hire" onclick="app('hire')" class="option">
+                        hire!!
+                    </div>
+                    <div id="oldsite" onclick="app('oldsite')" class="option">
+                        old site?
+                    </div>
                 </div>
         </div>
 
@@ -69,32 +71,6 @@
         <img id="arrow" class="arrow" src="image/arrow.png" alt="">
     </div>
 
-    <div id="chatbot" class="chatbot">
-        <div class="head">
-            <div class="heading">Ask him not me!</div>
-            <div class="cross"> &#10005;</div>
-
-        </div>
-        <div id="chat" class="chat">
-            <div class="bot">
-                hi! I'm Akhlesh's Bot
-                </div>
-                <div class="bot">
-                   How can I help you today?
-                </div>
-        
-                <div id="hello" onclick="app('hello')" class="option">
-                    I just wanted to say Hello!
-                </div>
-                <div id="hire" onclick="app('hire')" class="option">
-                    I want to hire you.
-                </div>
-                <div id="oldsite" onclick="app('oldsite')" class="option">
-                    Looking for old site.
-                </div>
-        </div>
-
-    </div>
 
 
     <div  class="ghargrocery rellax" data-rellax-speed="3">
@@ -176,11 +152,11 @@
                 bot.innerText = "sorry we have it shuttdown";
             }
 
-            document.getElementById('hello').before(me);
+            document.getElementById('option-wrapper').before(me);
 
 
             setTimeout(()=>{
-                document.getElementById('hello').before(bot);
+                document.getElementById('option-wrapper').before(bot);
             },1000);
 
             setTimeout(()=>{
