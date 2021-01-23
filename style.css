@@ -189,12 +189,16 @@ a{
  height: fit-content;
 }
 
+.project-wrapper{
+    display: flex;
+    flex-wrap:wrap ;
+}
 
 
 
 .ghargrocery{
-    width: 90%;
-    margin: auto;
+    width: 40%;
+    margin: 0 auto 30px auto;
     background-image: linear-gradient(to top right,rgb(212, 184, 184),white,white);
     text-align: center;
     border-radius: 50px;
@@ -220,7 +224,7 @@ a{
 }
 
 .dscsstc{
-    width: 90%;
+    width: 40%;
     margin: auto;
     background-image: linear-gradient(to top right,rgb(177, 207, 216),rgb(217, 238, 241));
     text-align: center;
@@ -372,6 +376,34 @@ a{
 }
 
 
+.blog{
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+
+.blog .blog-card{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.103);
+    width: 300px;
+    margin: 30px auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.blog .blog-card img{
+    width: 100%;
+}
+
+.blog .blog-card h2{
+    color: black;
+    margin: 5px 5px 0 5px;
+}
+
+.blog .blog-card p{
+    color: rgb(107, 107, 107);
+}
 
 .about{
     display: flex;
@@ -390,7 +422,7 @@ a{
 .about .image-wrapper img{
     width: 100%;
     border-radius: 30px;
-
+    transition: 0.1s;
 }
 
 
@@ -452,7 +484,11 @@ a{
         width: 95%;
         border-radius: 30px;
     }
-  
+    
+    .blog .blog-card{
+        width: 95%;
+    }
+    
     .botanim{
         width: 90%;
         height: 80%;

@@ -73,20 +73,39 @@
 
 
 
-    <div  id="project" class="ghargrocery rellax" data-rellax-speed="3">
-        <h1>GharGrocery</h1>
-        <p>MOBILE APP</p>
-        <img class="ghargroceryimage" src="image/ghargroceryproject1.png" alt="">
-    </div>
-    <div class="dscsstc rellax" data-rellax-speed="2">
-        <h1>DSC SSTC</h1>
-        <p>MOBILE APP</p>
-        <img class="dscsstcimage" src="image/dscsstcproject2.png" alt="">
+    <div class="project-wrapper  rellax" data-rellax-speed="3">
+        <div  id="project" class="ghargrocery">
+            <h1>GharGrocery</h1>
+            <p>MOBILE APP</p>
+            <img class="ghargroceryimage" src="image/ghargroceryproject1.png" alt="">
+        </div>
+        <div class="dscsstc">
+            <h1>DSC SSTC</h1>
+            <p>MOBILE APP</p>
+            <img class="dscsstcimage" src="image/dscsstcproject2.png" alt="">
+        </div>
     </div>
        
 
+    <div id="blog" class="blog rellax" data-rellax-speed="1">
+        <div class="blog-card">
+            <img src="image/android-blog-img.png" alt="">
+            <h2>blog head</h2>
+            <p>blog description</p>
+        </div>
+        <div class="blog-card">
+            <img src="image/android-blog-img.png" alt="">
+            <h2>blog head</h2>
+            <p>blog description</p>
+        </div>
+        <div class="blog-card">
+            <img src="image/android-blog-img.png" alt="">
+            <h2>blog head</h2>
+            <p>blog description</p>
+        </div>
+    </div>
 
-    <div id="about" class="about rellax" data-rellax-speed="1">
+    <div id="about" class="about rellax" data-rellax-speed="0">
         <div id="picw" class="image-wrapper rellax" data-rellax-speed="0">
             <img id="mypic" src="image/mypic.jpeg" alt="">
         </div>
@@ -96,25 +115,14 @@
         </div>
     </div>
 
-    <div class="botanim rellax" data-rellax-speed="0.2">
-        <div class="eye-wrapper">
-            <div class="eye">
-                <div class="eyeball"></div>
-            </div>
-            <div class="eye">
-                <div class="eyeball"></div>
-            </div>
-        </div>
-        <div id="mouth" onclick="openchatbot()" class="mouth"><h2>Talk To Me!</h2></div>
-    </div>
+  
 
     <div class="floatbox1 rellax" data-rellax-speed="-4"></div>
     <div class="floatbox2 rellax" data-rellax-speed="-4"></div>
 
     <script>
         var rellax = new Rellax('.rellax')
-     
-
+    
         function closechatbot(){
             closechatbotanim.play();
             document.getElementById('chatbot').style.display = "none";
@@ -261,16 +269,7 @@
             autoplay:false
         })
 
-        anime({
-            targets:'.comat',
-            translateX:[Math.random()*window.innerWidth,window.innerWidth-30],
-            translateY:[0,1000],
-            duration:1000,
-            delay:2000,
-            loop:true,
-            easing:'linear',
-            autoplay:true
-        })
+     
 
         anime({
             targets:'.ball',
@@ -304,48 +303,9 @@
         })
 
 
-        anime({
-            targets:'.star',
-            opacity:[0,1],
-            duration:1000,
-            loop:false,
-            easing:'linear',
-            autoplay:true
-        })
 
-        anime({
-            targets:'.mountain',
-            opacity:[0,0.7],
-            translateY:[100,0],
-            duration:1000,
-            loop:false,
-            easing:'linear',
-            autoplay:true
-        })
+   
 
-        anime({
-            targets:'.moon',
-            opacity:[0,0.7],
-            translateY:[500,0],
-            delay:500,
-            duration:1000,
-            loop:false,
-            easing:'linear',
-            autoplay:true
-        })
-
-
-       
-        anime({
-            targets:'.city',
-            opacity:[0,1],
-            translateY:[50,0],
-            duration:1000,
-            delay:anime.stagger(100),
-            loop:false,
-            easing:'linear',
-            autoplay:true
-        })
     </script>
 </body>
 </html>
