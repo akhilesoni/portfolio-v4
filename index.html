@@ -115,10 +115,11 @@
         </div>
     </div>
 
+
+
   
 
     <div class="floatbox1 rellax" data-rellax-speed="-4"></div>
-    <div class="floatbox2 rellax" data-rellax-speed="-4"></div>
 
     <script>
         var rellax = new Rellax('.rellax')
@@ -147,13 +148,17 @@
 
             var bot = document.createElement('div');
             var me = document.createElement('div');
+            var a = document.createElement('a')
+            a.innerText = "soniakhilesh101@gmail.com"
+            a.href = "mailto:soniakhilesh101@gmail.com"
             bot.classList.add('bot');
             me.classList.add('me');
             if(id == "hello"){
                 bot.innerText = "Hi ! i'm fine and thanks for visiting my website";
                 me.innerText = "hello! how are you";
             }else if(id == "hire"){
-                bot.innerText = "Sounds good! Mail me for more info at Soniakhilesh101@gmail.com";
+                bot.innerText = "Sounds good! Mail me for more info at ";
+                bot.appendChild(a);
                 me.innerText = "I want to hire you!";
             }else{
                 me.innerText = "I'm looking for your oldsite?";
@@ -178,16 +183,35 @@
         var pic = document.getElementById('mypic');
         pic.addEventListener('mousemove',(event)=>{
             
-            pic.style.transform = "translate("+(-250+event.offsetX)/10+"px,"+(-250+event.offsetY)/10+"px)";
-            picw.style.transform = "translate("+(250-event.offsetX)/6+"px,"+(250-event.offsetY)/6+"px)";
+            pic.style.transform = "perspective(500px) rotateY("+(-250+event.offsetX)/20+"deg) scale(1.1)";
+            picw.style.transform = "perspective(500px) rotateX("+(-250+event.offsetY)/20+"deg)  scale(1.1)";
+
+        })
+        pic.addEventListener('mouseout',(event)=>{
+            
+            pic.style.transform = "perspective(500px) rotateY(0deg)";
+            picw.style.transform = "perspective(500px) rotateX(0deg)";
 
         })
 
+        
+        var blog =  anime({
+            targets:'.blog',
+            
+            opacity:[0,1],
+            delay:1000,
+            duration:500,
+            easing:'linear',
+            loop:false,
+            autoplay:true
+        })
+        var blogbox = document.getElementById('blog')
         window.onscroll = ()=>{
             if(window.scrollY>10){
                 document.getElementById('menu').style.background = 'white';
                 document.getElementById('arrow').style.display = "none"
             }
+            
             else{
                 document.getElementById('menu').style.background = "transparent";
                 document.getElementById('arrow').style.display = "block"

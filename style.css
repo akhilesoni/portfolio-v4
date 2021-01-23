@@ -215,8 +215,11 @@ a{
 }
 
 .ghargrocery .ghargroceryimage:hover{
-    transform:translate(0,-20px) ;
+    transform: translate(0,-20px) ;
+    
 }
+
+
 
 .ghargrocery h1{
     padding: 30px;
@@ -226,7 +229,7 @@ a{
 .dscsstc{
     width: 40%;
     margin: auto;
-    background-image: linear-gradient(to top right,rgb(177, 207, 216),rgb(217, 238, 241));
+    background-image: linear-gradient(to top right,rgb(200, 229, 238),white,rgb(255, 255, 255));
     text-align: center;
     border-radius: 50px;
     color: rgb(41, 41, 41);
@@ -390,6 +393,7 @@ a{
     margin: 30px auto;
     text-align: center;
     overflow: hidden;
+    transition: 0.2s;
 }
 
 .blog .blog-card img{
@@ -399,6 +403,10 @@ a{
 .blog .blog-card h2{
     color: black;
     margin: 5px 5px 0 5px;
+}
+
+.blog .blog-card:hover{
+    transform: perspective(300px) rotate3d(1,-1,0,10deg) scale(1.1);
 }
 
 .blog .blog-card p{
@@ -414,6 +422,7 @@ a{
 .about .image-wrapper{
     width: 500px;
     border-radius: 30px;
+    transition: 0.1s;
     background-color: rgba(36, 36, 36, 0.384);
     margin: auto;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.171);
