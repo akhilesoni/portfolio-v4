@@ -110,9 +110,20 @@ a{
 
 .floatmenubutton{
     float: right;
+    padding-right:10px ;
+    padding-left: 10px;
+    border-radius: 10px;
     opacity: 0;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
 }
 
+
+.floatmenubutton:hover{
+
+    background-color: rgba(0, 0, 0, 0.075);
+}
 .floatmenu .floatmenuoption{
     padding: 10px;
 }
@@ -377,6 +388,7 @@ a{
 .chatbot .option:hover{
     background-color: rgb(212, 182, 146);
 }
+
 
 
 .blog{

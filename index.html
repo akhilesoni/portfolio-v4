@@ -22,6 +22,7 @@
     <div class="floatmenu" id="floatmenu">
         <div class="floatmenuoption"><a href="#project">Project</a></div>
         <div class="floatmenuoption"><a href="#about">About</a></div>
+        <div class="floatmenuoption"><a href="#blog">Blog</a></div>
         <div class="floatmenuoption" onclick="openchatbot()"><a >Contact</a></div>
     </div>
     <div id="chatbot" class="chatbot">
@@ -53,8 +54,9 @@
         <a class="name" href="#b"> Akhlesh Soni </a>
         <a class="menu-item"  href="#project">Project</a>
         <a class="menu-item"  href="#about">About</a>
+        <a class="menu-item"  href="#blog">Blog</a>
         <a class="menu-item" onclick="openchatbot()" >Contact</a>
-        <p class="floatmenubutton" onclick="menudialog()" >  &#9776;</p>
+        <div class="floatmenubutton" onclick="menudialog()" >  &#9776;</div>
     </div>
     <div id="b" class="sky">
         <div class="introduction-wrapper">
@@ -86,7 +88,6 @@
         </div>
     </div>
        
-
     <div id="blog" class="blog rellax" data-rellax-speed="1">
         <div class="blog-card">
             <img src="image/android-blog-img.png" alt="">
@@ -124,6 +125,10 @@
     <script>
         var rellax = new Rellax('.rellax')
     
+        window.onscroll = ()=>{
+            document.getElementById('chatbot').style.display = "none";
+        }
+
         function closechatbot(){
             closechatbotanim.play();
             document.getElementById('chatbot').style.display = "none";
@@ -149,15 +154,19 @@
             var bot = document.createElement('div');
             var me = document.createElement('div');
             var a = document.createElement('a')
-            a.innerText = "soniakhilesh101@gmail.com"
-            a.href = "mailto:soniakhilesh101@gmail.com"
+       
             bot.classList.add('bot');
             me.classList.add('me');
             if(id == "hello"){
-                bot.innerText = "Hi ! i'm fine and thanks for visiting my website";
+                bot.innerText = "Hi ! i'm fine and thanks for visiting my website !";
+                a.innerText = " Check out my blog here"
+                a.href = "https://akhilesoni.blogspot.com/" 
+                bot.appendChild(a);
                 me.innerText = "hello! how are you";
             }else if(id == "hire"){
                 bot.innerText = "Sounds good! Mail me for more info at ";
+                a.innerText = "soniakhilesh101@gmail.com"
+                a.href = "mailto:soniakhilesh101@gmail.com" 
                 bot.appendChild(a);
                 me.innerText = "I want to hire you!";
             }else{
@@ -183,8 +192,8 @@
         var pic = document.getElementById('mypic');
         pic.addEventListener('mousemove',(event)=>{
             
-            pic.style.transform = "perspective(500px) rotateY("+(-250+event.offsetX)/20+"deg) scale(1.1)";
-            picw.style.transform = "perspective(500px) rotateX("+(-250+event.offsetY)/20+"deg)  scale(1.1)";
+            pic.style.transform = "perspective(500px) rotateY("+(-250+event.offsetX)/20+"deg) ";
+            picw.style.transform = "perspective(500px) rotateX("+(-250+event.offsetY)/20+"deg)  ";
 
         })
         pic.addEventListener('mouseout',(event)=>{
@@ -210,6 +219,7 @@
             if(window.scrollY>10){
                 document.getElementById('menu').style.background = 'white';
                 document.getElementById('arrow').style.display = "none"
+            
             }
             
             else{
